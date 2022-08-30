@@ -13,7 +13,7 @@ class InventoryRefactor(Importer):
         return InventoryIterator(self.data)
 
     def import_data(self, path, report_type):
-        self.data += self.importer.import_data(path)
+        self.data.extend(self.importer.import_data(path))
 
         if report_type == "simples":
             return SimpleReport.generate(self.data)

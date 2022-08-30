@@ -12,4 +12,5 @@ class InventoryIterator(Iterator):
         except IndexError:
             raise StopIteration()
         else:
+            self._index += 1
             return current_value
