@@ -35,6 +35,7 @@ class Inventory:
                 {info.tag: info.text for info in xml_info}
                 for xml_info in file_reader
             )
+
         if report_type == "simples":
             return SimpleReport.generate(report_file)
         else:
