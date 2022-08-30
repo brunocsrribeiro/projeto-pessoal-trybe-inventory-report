@@ -8,6 +8,6 @@ class JsonImporter(Importer):
             raise ValueError("Arquivo inválido")
 
         with open(path, encoding="utf-8") as file:
-            file_reader = json.loads(file.read())
+            file_reader = json.load(file)
 
         return file_reader

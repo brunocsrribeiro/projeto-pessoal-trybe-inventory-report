@@ -20,7 +20,7 @@ class Inventory:
     @classmethod
     def file_json(cls, path, report_type):
         with open(path, encoding="utf-8") as file:
-            file_reader = json.loads(file.read())
+            file_reader = json.load(file)
 
         if report_type == "simples":
             return SimpleReport.generate(file_reader)
