@@ -6,9 +6,11 @@ from inventory_report.inventory.inventory_refactor import InventoryRefactor
 
 
 def main():
+    # REF.:https://stackoverflow.com/questions/5574702/how-to-print-to-stderr-in-python
     if len(sys.argv) < 3:
         return print("Verifique os argumentos", file=sys.stderr)
 
+    # REF.:https://www.geeksforgeeks.org/gfact-50-python-end-parameter-in-print/
     if sys.argv[1].endswith(".csv"):
         inventory_refactor = InventoryRefactor(CsvImporter)
         print(inventory_refactor.import_data(sys.argv[1], sys.argv[2]), end="")
